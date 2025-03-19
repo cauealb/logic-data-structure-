@@ -1,20 +1,12 @@
-// let varText = "2";
-// let varNumber = 2;
-// let varBoolen = true;
-// let varNull = null;
-// let varUndefined = undefined;
+// Crie uma função que verifique se uma string é um palíndromo (lê-se igual de trás para frente).
+// Exemplo: "arara" → true
 
-let palavra = "Geovanna"
-let arr = palavra.split("")
-
-let newArray = []
-for(let i = 0; i < arr.length; i++){
-    newArray.unshift(arr[i])
+const palindromo = (str) => {
+    let strInvert = str.split("").reverse("").join("")
+    if (strInvert === str){
+        return true
+    }
+    return false
 }
 
-let newPalavra = ""
-for(let i = 0; i < newArray.length; i++){
-    newPalavra += newArray[i]
-}
-
-console.log(newPalavra)
+console.log(palindromo("arara"))
