@@ -1,12 +1,14 @@
-// Crie uma função que verifique se uma string é um palíndromo (lê-se igual de trás para frente).
-// Exemplo: "arara" → true
+// Escreva uma função para calcular o fatorial de um número (ex: 5! = 5 × 4 × 3 × 2 × 1).
+// Exemplo: 5 → 120
 
-const palindromo = (str) => {
-    let strInvert = str.split("").reverse("").join("")
-    if (strInvert === str){
-        return true
+const fatorial = (num) => {
+    let conta = 1
+    for(let i = num; i <= num; i--){
+        if(i === 0) {
+            return conta
+        }
+        conta = conta * i
     }
-    return false
 }
 
-console.log(palindromo("arara"))
+console.log(fatorial(7))
