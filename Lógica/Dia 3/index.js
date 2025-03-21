@@ -1,17 +1,16 @@
-// Escreva uma função que conte quantas vogais existem em uma string.
-// Exemplo: "javascript" → 3
+// Implemente uma função que remova elementos duplicados de um array.
+// Exemplo: [1, 2, 2, 3, 4, 4] → [1, 2, 3, 4]
 
-const contVogais = (str) => {
-    const vogais = ['a', 'e', 'i', 'o', 'u']
-    const arr = str.split("")
-    let cont = 0
+const removeRepet = (arr) => {
+    let newArray = []
 
-    for (const i of arr){
-        if (vogais.includes(i)) {
-            cont++
+    for(const i of arr) {
+        if (!newArray.includes(i)) {
+            newArray.push(i)
         }
     }
-    return cont
+
+    return newArray
 }
 
-console.log(contVogais("javascript"))
+console.log(removeRepet([76, 54, 2, 4, 6, 4, 22, 76, 54, 2, 1, 6, 7, 22]))
