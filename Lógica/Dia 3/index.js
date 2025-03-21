@@ -1,29 +1,29 @@
-// Crie uma função que retorne os primeiros n números da sequência de Fibonacci.
-// Exemplo: n = 6 → [0, 1, 1, 2, 3, 5]
+// Se o número é múltiplo de 3 → "Fizz"
 
-// const fibonacci = (n) => {
-//     let finoArray = [0, 1]
-//     let ant1 = 0
-//     let ant2 = 1
-//     let num = 0
-//     for(let i = 0; i < n; i++){
-//         num += ant1 + ant2
-//         ant1 = finoArray[i - 2]
-//         ant2 = finoArray[i - 1]
-//         finoArray.push(num)
-//     }
-// }
+// Se é múltiplo de 5 → "Buzz"
 
-// console.log(fibonacci(6))
+// Se é múltiplo de ambos → "FizzBuzz"
 
-const fibonacci = (n) => {
-    const sequencia = [0, 1]
+// Caso contrário → retorna o próprio número.
+// Exemplo: 15 → ["1", "2", "Fizz", ..., "14", "FizzBuzz"]
 
-    for(let i = 2; i < n; i++) {
-        sequencia.push(sequencia[i - 1] + sequencia[i - 2])
+const FizzBuzz = (n) => {
+    let arr = []
+    for(let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            arr.push("FizzBuzz")
+        }
+        else if (i % 3 === 0) {
+            arr.push("Fizz")
+        }
+        else if (i % 5 === 0) {
+            arr.push("Buzz")
+        }
+        else {
+            arr.push(i)
+        }
     }
-
-    return sequencia.slice(0, n)
+    return arr
 }
 
-console.log(fibonacci(6))
+console.log(FizzBuzz(15))
