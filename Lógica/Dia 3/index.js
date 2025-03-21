@@ -1,14 +1,17 @@
-// Escreva uma função para calcular o fatorial de um número (ex: 5! = 5 × 4 × 3 × 2 × 1).
-// Exemplo: 5 → 120
+// Crie uma função que retorne os primeiros n números da sequência de Fibonacci.
+// Exemplo: n = 6 → [0, 1, 1, 2, 3, 5]
 
-const fatorial = (num) => {
-    let conta = 1
-    for(let i = num; i <= num; i--){
-        if(i === 0) {
-            return conta
-        }
-        conta = conta * i
+const fibonacci = (n) => {
+    let finoArray = [0, 1]
+    let ant1 = 0
+    let ant2 = 1
+    let num = 0
+    for(let i = 0; i < n; i++){
+        num += ant1 + ant2
+        ant1 = finoArray[i - 2]
+        ant2 = finoArray[i - 1]
+        finoArray.push(num)
     }
 }
 
-console.log(fatorial(7))
+console.log(fibonacci(6))
