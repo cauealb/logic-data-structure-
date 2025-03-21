@@ -1,16 +1,11 @@
-// Implemente uma função que remova elementos duplicados de um array.
-// Exemplo: [1, 2, 2, 3, 4, 4] → [1, 2, 3, 4]
+const fibonacci = (n) => {
+    const sequencia = [0, 1]
 
-const removeRepet = (arr) => {
-    let newArray = []
-
-    for(const i of arr) {
-        if (!newArray.includes(i)) {
-            newArray.push(i)
-        }
+    for(let i = 2; i < n; i++) {
+        sequencia.push(sequencia[i - 2] + sequencia[i - 1])
     }
 
-    return newArray
+    return sequencia
 }
 
-console.log(removeRepet([76, 54, 2, 4, 6, 4, 22, 76, 54, 2, 1, 6, 7, 22]))
+console.log(fibonacci(6))
