@@ -1,12 +1,12 @@
-function fatorial(n) {
+function fibonacci(n) {
     if(n === 0) {
-        return 0
+        return 1
     }
     if (n === 1) {
         return 1
     }
 
-    return n * fatorial(n - 1)
+    return fibonacci(n - 1) + fibonacci(n - 2)
 }
 
-console.log(fatorial(5))
+console.log(fibonacci(21))
