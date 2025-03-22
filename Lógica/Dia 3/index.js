@@ -1,11 +1,25 @@
-const fibonacci = (n) => {
-    const sequencia = [0, 1]
+// Crie uma função que capitalize a primeira letra de cada palavra em uma string.
+// Exemplo: "hello world" → "Hello World"
 
-    for(let i = 2; i < n; i++) {
-        sequencia.push(sequencia[i - 2] + sequencia[i - 1])
+const capitalize = (str) => {
+    let arrStr = str.split("")
+    let upper = true
+    let varUpper = ''
+
+    for(let i = 0; i < arrStr.length; i++) {
+        if (upper) {
+            varUpper = arrStr[i]
+            arrStr.splice(i, 1)
+            arrStr.splice(i, 0, varUpper.toUpperCase())
+            upper = false
+        }
+        else if (arrStr[i] === ' ') {
+            upper = true
+        }
     }
 
-    return sequencia
+    return arrStr.join("")
+    
 }
 
-console.log(fibonacci(6))
+console.log(capitalize("  hoje  tem  café  da  manhã"))
