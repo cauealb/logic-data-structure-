@@ -1,25 +1,12 @@
-// Crie uma função que capitalize a primeira letra de cada palavra em uma string.
-// Exemplo: "hello world" → "Hello World"
+// Implemente uma função que encontre o segundo maior número em um array.
+// Exemplo: [5, 1, 8, 3] → 5
 
-const capitalize = (str) => {
-    let arrStr = str.split("")
-    let upper = true
-    let varUpper = ''
+const secoundGreater = (arr) => {
+    arr.sort(function(a, b) {
+        return a - b
+    })
 
-    for(let i = 0; i < arrStr.length; i++) {
-        if (upper) {
-            varUpper = arrStr[i]
-            arrStr.splice(i, 1)
-            arrStr.splice(i, 0, varUpper.toUpperCase())
-            upper = false
-        }
-        else if (arrStr[i] === ' ') {
-            upper = true
-        }
-    }
-
-    return arrStr.join("")
-    
+    return arr[1]
 }
 
-console.log(capitalize("  hoje  tem  café  da  manhã"))
+console.log(secoundGreater([1, 10, 2, 21]))
