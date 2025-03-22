@@ -1,12 +1,25 @@
-// Implemente uma função que encontre o segundo maior número em um array.
-// Exemplo: [5, 1, 8, 3] → 5
+// function fibonacci(n) {
+//     if(n === 0) {
+//         return 0
+//     }
+//     if (n === 1) {
+//         return 1
+//     }
 
-const secoundGreater = (arr) => {
-    arr.sort(function(a, b) {
-        return a - b
-    })
+//     return  fibonacci(n - 1) + fibonacci(n - 2)
+// }
 
-    return arr[1]
+// console.log(fibonacci(5))
+
+function fatorial(n) {
+    if(n === 0) {
+        return 0
+    }
+    if(n === 1) {
+        return 1
+    }
+
+    return n * fatorial(n - 1)
 }
 
-console.log(secoundGreater([1, 10, 2, 21]))
+console.log(fatorial(5))
