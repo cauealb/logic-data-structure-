@@ -1,12 +1,11 @@
-function fibonacci(n) {
-    if(n === 0) {
-        return 1
-    }
-    if (n === 1) {
-        return 1
-    }
+// Implemente uma função que ordene um array de números em ordem crescente.
 
-    return fibonacci(n - 1) + fibonacci(n - 2)
+const order = (arr) => {
+    return arr.sort((a, b) => {
+        return a - b
+    })
 }
 
-console.log(fibonacci(21))
+
+console.log(order([3, 5, 7, 1, 2]))
+// [3, 5, 7, 1, 2] = []
