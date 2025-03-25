@@ -1,24 +1,16 @@
-// Implemente uma função de busca binária em um array ordenado.
+// Escreva uma função que some os dígitos de um número (ex: 123 → 6).
 
-const searchBinary = (arr, target) => {
-    let inicio = 0
-    let fim = arr.length - 1
+const soma = (num) => {
+    const arrString = String(num).split("")
+    let soma = 0
 
-    while(inicio <= fim) {
-        const meio = Math.floor((inicio + fim) / 2)
+    for(const elementos of arrString) {
+        const convert = Number(elementos)
 
-        if(arr[meio] === target) {
-            return meio
-        }
-        else if (arr[meio] < target) {
-            inicio = meio + 1
-        }
-        else {
-            fim = meio - 1
-        }
+        soma += convert
     }
 
-    return -1
+    return soma
 }
 
-console.log(searchBinary([1, 2, 7, 9, 10, 15], 15))
+console.log(soma(123))
